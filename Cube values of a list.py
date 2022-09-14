@@ -1,17 +1,18 @@
+import numpy as np
 try:
-    def cubes():
+    def cube_of_values():
         n = int(input("Enter the number of elements in list: "))
-        list_num = [1]
+        l = []
         for i in range(n):
             num = int(input("Enter a number: "))
-            list_num.append(num)
-        list_num.pop(0)
-        print("Input: " + str(list_num))
-        for x in list_num:
-            res = (x, x**3)
-            print(res)
-    cubes()
+            l.append(num)
+            
+        mat = np.array(l)
+        print(mat)
+        mat_cube = mat**3
+        print(mat_cube)
+    cube_of_values()
 except ValueError:
-    print("Enter number of elements.")
+    print("Enter a string")
 except:
     print("Enter correctly")
